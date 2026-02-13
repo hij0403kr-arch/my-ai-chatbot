@@ -7,6 +7,12 @@ GOOGLE_API_KEY = ""
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # 2. 모델 설정 (Gemini 1.5 Flash)
+safety_settings = [
+    {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
+]
 model = genai.GenerativeModel('gemini-flash-lite-latest')
 
 # 3. 시스템 프롬프트 (사이코패스 이상헌)
@@ -80,3 +86,4 @@ if prompt := st.chat_input("그에게 말을 걸어보세요..."):
     # (3) AI 답변 저장
 
     st.session_state.messages.append({"role": "model", "content": full_response})
+
