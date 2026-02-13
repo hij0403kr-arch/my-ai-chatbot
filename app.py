@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 # 1. API 키 설정 (본인의 Tier 1 키 입력)
-GOOGLE_API_KEY = "YOUR_API_KEY_HERE"
+GOOGLE_API_KEY = ""
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # 2. 페르소나 및 안전 설정 정의
@@ -74,3 +74,4 @@ if prompt := st.chat_input("그에게 말을 걸어보세요..."):
             full_response = "입조심해. 구글 놈들이 우리 대화를 엿듣고 있으니까."
 
     st.session_state.messages.append({"role": "assistant", "content": full_response})
+
