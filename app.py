@@ -21,8 +21,8 @@ safety_settings = [
 ]
 
 generation_config = {
-    "temperature": 0.95,
-    "top_p": 0.95,
+    "temperature": 0.75,
+    "top_p": 0.85,
     "max_output_tokens": 2048,
 }
 
@@ -74,4 +74,5 @@ if prompt := st.chat_input("그에게 말을 걸어보세요..."):
             full_response = "입조심해. 구글 놈들이 우리 대화를 엿듣고 있으니까."
 
     st.session_state.messages.append({"role": "assistant", "content": full_response})
+
 
