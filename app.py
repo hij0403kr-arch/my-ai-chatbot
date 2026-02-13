@@ -3,7 +3,7 @@ import google.generativeai as genai
 import os
 
 # 1. API 키 설정 (본인 키 입력!)
-GOOGLE_API_KEY = "AIzaSyAr855bTTRmy1x6KPlCaeMLCs7ygE93io4"
+GOOGLE_API_KEY = ""
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # 2. 모델 설정 (Gemini 1.5 Flash)
@@ -78,4 +78,5 @@ if prompt := st.chat_input("그에게 말을 걸어보세요..."):
             st.error(f"에러 발생: {e}")
 
     # (3) AI 답변 저장
+
     st.session_state.messages.append({"role": "model", "content": full_response})
